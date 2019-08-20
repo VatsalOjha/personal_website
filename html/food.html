@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1.0">
+	<title>
+		Food
+	</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="food.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATlVhxG_kd3nCAe1CBm-r4gHr-dNe3uoU&libraries=places&callback=initMap"
+		async defer></script>
+
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<link rel="stylesheet" type="text/css" href="food.css">
+</head>
+<body>
+	<nav>
+		<div class="navbar-content">
+			<a class="navbar-button" href="/">Home</a>
+			<a class="navbar-button" href="/math">Math Stuff</a>
+			<a class="navbar-button" href="/projects">Projects</a>
+			<a class="navbar-button" href="/food">Food</a>
+		</div>
+	</nav>
+	<div class="content">
+		<div class="buttons">
+			<input type="text" id="find_text" placeholder="Find a Restaurant">
+			<button id="find_button">Find</button>
+			<button onclick=show_suggestions()>Show Suggestions</button>
+			<button onclick = hide_suggestions()>Hide Suggestions</button>
+		</div>
+
+		<div id="map"></div>
+	</div>
+</body>
+</html>

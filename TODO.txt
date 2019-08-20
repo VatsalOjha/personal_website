@@ -1,0 +1,10 @@
+General:
+1. Add Security so the API key isn't just in the file itself
+2. Add regular expressions to clippy groceries for input purposes
+	2.1. This is to get a text only query to remove stuff in addition to the interface
+3. Add regular expressions to clippy weather
+4. Add basically the same thing for groceries but for Mark's Jumper.
+5. Add a clippy chores thing to schedule chores for people and send reminder messages.
+6. Try to train a classifier to predict who sent a message (using pytorch).
+For Vatsal:
+1. Actually write something on my website lol

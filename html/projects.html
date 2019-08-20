@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1.0">
+	<title>
+		Projects
+	</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="food.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATlVhxG_kd3nCAe1CBm-r4gHr-dNe3uoU&libraries=places&callback=initMap"
+		async defer></script>
+
+	<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+</head>
+<body>
+	<nav>
+		<div class="navbar-content">
+			<a class="navbar-button" href="/">Home</a>
+			<a class="navbar-button" href="/math">Math Stuff</a>
+			<a class="navbar-button" href="/projects">Projects</a>
+			<a class="navbar-button" href="/food">Food</a>
+		</div>
+	</nav>
+<div class = "content">
+  <h2 class="title">
+    Clippy
+  </h2>
+  <h3>
+    Overview
+  </h3>
+  <p><a href="https://github.com/VatsalOjha/clippy" target="_blank">GitHub For Clippy</a></p>
+  <p>
+    Clippy is essentially an all-in-one slack app. The "all" in this may lead one to believe that it has a lot of useful features, but this is definitely not the goal with the app. The current goal is to set up a robust framework for an app so my friends and I can set up any features we want easily. If we happen to make some useful features, so be it. 
+  </p>
+  <p>
+    The implementation is pretty simple using the Slack API. The application is running on a Digital Ocean server (in New York or something like that). It communicates with Slack through HTTP Post requests pretty much entirely, so dealing with different types of events on the Slack group is pretty easy.
+  </p>
+  <h3>
+    Current State
+  </h3>
+  <p>
+    Initially, Clippy started out as a Node.js application running on the same instance as the website you're on! With this, I was able to write a couple features for Clippy in javascript: </p>
+  <ul>
+    <li>Clippy Weather: This is a super simple command which just responds with the current weather in Pittsburgh when someone says "clippy weather"</li>
+    <li>Clippy Groceries: This is a slightly more intensive feature which keeps track of a group grocery list with adding, viewing and deleting capabilites. The data is stored via MySQL on the same server as the app.</li>
+  </ul>
+  <p>
+  However, because of my goal with letting others contribute, I decided that javascript wasn't the best language to use to implement the rest of the app in. I pretty quickly settled on Python, and in my stubborness to not want to switch from using Node.js, I initially went with an approach of trying to integrate Node.js with python on this app. This proved to be a stupid idea, as the only thing I was using node for could easily be done using Flask and Requests in Python. So, for now, I am working on moving all of Clippy to a Python App, detaching it from my website entirely. 
+  </p>
+  <h3>Future</h3>
+  <p>Once I'm done moving to Python, I plan on adding a few new features/fixes:</p>
+  <ul>
+    <li>Improved Regular Expressions: While Slack has interactive messages, I find it quite limiting (especially since I can't render any of my own HTML for security reasons on their part). For this reason, we decided it would be best to lean into this limitation and simply make a robust text bot. Naturally, this requires decent regular expression work to get a decent one working, and currently the regular expressions I'm using are quite basic, so more would be nice.</li>
+    <li>User Predictor: Try and use the 10k messages saved by Slack to train a classifier to predict who a user is based on the message sent. The data is quite easy to get, but I haven't settled on a specific ML architecture/method to use in this. Linear SVC or Naive Bayes seem like the ways to go. I've implemented Naive Bayes for a class project before so I might just stick with that.</li>
+    <li>Mark's Jumper: For a more fun feature, my (only) Irish friend in Carnegie Mellon often responds to questions of the form: "Where is ____" with "Up me jumper". I think it'd be nice to keep track of what's up there, so this would essentially be a renamed version of Clippy Groceries.</li>
+  </ul>
+    <h2 class="title">
+    Website
+  </h2>
+  <h3>Overview</h3>
+  <p>This website is essentially just a nice window into my life, mostly for my own purposes. It's a simple node.js application for now, but I'm hoping to improve upon it quite a bit.</p>
+  <h3>Current State</h3>
+  <p>As of now, the only good page in my opinion is the Food page. Currently, there's some functionality to find places on the map on the page, suggest it to me, and then see it pop up on the map. There's still quite a bit of work to be done on the map, but right now it's a good integration of this node application with MySQL.</p>
+  <p>I'll update the home and projects page more thoroughly soon.
+  </p>
+  <h3>Future</h3>
+  <p>For the Home Page, I'm hoping to spice it up a bit and make it more fun to look at. I might add some interesting things about myself as I figure out what those things are.</p>
+  <p>For Math Stuff, I have a few animations and proofs which I love and want to stick on there, but since art is not my forte, it will be a little while.</p>
+  <p>See Projects Tab for Updates on Projects Tab</p>
+  <p>For the Map, I'm hoping to make the current features more user friendly as well as integrating it with Clippy (see above). I'm also then hoping to write a small algorithm to suggest restaurants for me to go to when I'm not sure what to eat. I'm not set on making this a "machine learning" algorithm, I might just have it be mostly deterministic with a little randomness to stir the pot a bit.</p>
+  <p>As with above, this is also not public right now, but I will keep it at the top of my priorities list along with making Clippy public.</p>
+</div>
+</body>
+</html>
